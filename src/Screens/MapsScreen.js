@@ -7,7 +7,6 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { useIsFocused } from '@react-navigation/native';
 import { PERMISSIONS, RESULTS, check, request } from 'react-native-permissions';
 import PickUpSVG from '../../assets/SVG/PickUpSVG';
-import AutocompleteInput from 'react-native-autocomplete-input';
 import BikeSVG from '../../assets/SVG/BikeSVG';
 import InfoSVG from '../../assets/SVG/InfoSVG';
 
@@ -320,15 +319,15 @@ const MapsScreen = () => {
                             }
 
                             {drop && <Marker coordinate={drop} />}
-                            {/* {pickup && drop && (
-                            <MapViewDirections
-                                origin={pickup}
-                                destination={drop}
-                                apikey={GOOGLE_MAPS_APIKEY}
-                                strokeWidth={3}
-                            // strokeColor="hotpink"
-                            />
-                        )} */}
+                            {pickup && drop && (
+                                <MapViewDirections
+                                    origin={pickup}
+                                    destination={drop}
+                                    apikey={GOOGLE_MAPS_APIKEY}
+                                    strokeWidth={3}
+                                    strokeColor="hotpink"
+                                />
+                            )}
                         </MapView>
                         <View style={styles.searchContainer}>
                             <Text>Pickup Point</Text>
