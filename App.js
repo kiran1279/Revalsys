@@ -5,12 +5,14 @@ import HomeScreen from './src/Screens/HomeScreen'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './src/Navigation/StackNavigation';
+import MapsScreen from './src/Screens/MapsScreen';
 
 const App = () => {
   const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      <StackNavigation />
+      {/* <StackNavigation /> */}
+      <MapsScreen />
     </NavigationContainer>
   )
 }

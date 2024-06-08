@@ -29,7 +29,6 @@ const BottomNavigation = () => {
                         <ProfileSVG size={25} color={color} />
                     ),
                 }}
-
                 name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
     )
