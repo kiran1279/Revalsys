@@ -380,6 +380,7 @@ const MapsScreen = () => {
                         onRequestClose={toggleModal}
                     >
                         <View style={styles.modalBackground}>
+                            {/* info realted to assignment  */}
                             <View style={styles.modalContainer}>
                                 <Text style={styles.modalText}>Here, I have integrated Google Maps:</Text>
                                 <Text style={styles.modalText}>1. To get the directions, we need an auth token which is paid, so I didn't use it here.</Text>
