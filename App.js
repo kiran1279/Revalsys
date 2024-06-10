@@ -6,13 +6,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './src/Navigation/StackNavigation';
 import MapsScreen from './src/Screens/MapsScreen';
+import DashBoard from './src/Screens/DashBoard';
 
 const App = () => {
   const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      {/* <StackNavigation /> */}
-      <MapsScreen />
+      <StackNavigation />
+      {/* <MapsScreen /> */}
+      {/* <DashBoard /> */}
     </NavigationContainer>
   )
 }

@@ -7,6 +7,8 @@ import ProductDetails from '../Screens/ProductDetails'
 import { useNavigation } from '@react-navigation/native'
 import AllProducts from '../Screens/AllProducts'
 import ProfileScreen from '../Screens/ProfileScreen'
+import MapsScreen from '../Screens/MapsScreen'
+import DashBoard from '../Screens/DashBoard'
 
 const StackNavigation = () => {
     const Stack = createStackNavigator();
@@ -22,14 +24,16 @@ const StackNavigation = () => {
             <Stack.Screen
                 name="MainScreen" component={BottomNavigation} />
             <Stack.Screen
+                name="DashBoard" component={DashBoard} />
+            <Stack.Screen
+                name="Home" component={HomeScreen} />
+            <Stack.Screen
+                name="MapsScreen" component={MapsScreen} />
+            <Stack.Screen
                 name="AllProducts" component={AllProducts} />
             <Stack.Screen
-                options={{
-                }}
                 name="ProductDetails" component={ProductDetails} />
             <Stack.Screen
-                options={{
-                }}
                 name="ProfileScreen" component={ProfileScreen} />
         </Stack.Navigator>
     )
@@ -37,4 +41,6 @@ const StackNavigation = () => {
 
 export default StackNavigation
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})

@@ -10,7 +10,7 @@ import PickUpSVG from '../../assets/SVG/PickUpSVG';
 import BikeSVG from '../../assets/SVG/BikeSVG';
 import InfoSVG from '../../assets/SVG/InfoSVG';
 
-const GOOGLE_MAPS_APIKEY = 'AIzaSyBd1LjbHuAyDMiMAURqoarNzfyVg1F_F4o';
+const GOOGLE_MAPS_APIKEY = 'AIzaSyA2Fd_vcwsOnDzsnXRHUqiPxuH_rt5B7xc';
 const MapsScreen = () => {
 
     const [pickup, setPickup] = useState(null);
@@ -31,6 +31,8 @@ const MapsScreen = () => {
     const [dropOpen, setDropOpen] = useState(true)
     const handleInputChange = (text) => {
         setQuery(text);
+        setPickOpen(true)
+        setDropOpen(false)
         const filtered = hyderabadLocations.filter((location) =>
             location.name.toLowerCase().includes(text.toLowerCase())
         );
@@ -38,6 +40,8 @@ const MapsScreen = () => {
     };
     const handleDropChange = (text) => {
         setDropQuery(text);
+        setDropOpen(true)
+        setPickOpen(false)
         const filtered = hyderabadLocations.filter((location) =>
             location.name.toLowerCase().includes(text.toLowerCase())
         );
@@ -260,14 +264,14 @@ const MapsScreen = () => {
             (position) => {
                 const { latitude, longitude } = position.coords;
                 console.log("oooooo", latitude, longitude);
-                setLatitude(latitude);
-                setLongitude(longitude);
-                setRegion({
-                    latitude: latitude,
-                    longitude: longitude,
-                    latitudeDelta: 0.09,
-                    longitudeDelta: 0.09,
-                });
+                // setLatitude(latitude);
+                // setLongitude(longitude);
+                // setRegion({
+                //     latitude: latitude,
+                //     longitude: longitude,
+                //     latitudeDelta: 0.09,
+                //     longitudeDelta: 0.09,
+                // });
                 const location = {
                     latitude: latitude,
                     longitude: longitude,
@@ -287,6 +291,8 @@ const MapsScreen = () => {
         );
         setLoading(false)
     }, []);
+
+
 
 
     return (
@@ -319,7 +325,7 @@ const MapsScreen = () => {
                             }
 
                             {drop && <Marker coordinate={drop} />}
-                            {pickup && drop && (
+                            {/* {pickup && drop && (
                                 <MapViewDirections
                                     origin={pickup}
                                     destination={drop}
@@ -327,7 +333,7 @@ const MapsScreen = () => {
                                     strokeWidth={3}
                                     strokeColor="hotpink"
                                 />
-                            )}
+                            )} */}
                         </MapView>
                         <View style={styles.searchContainer}>
                             <Text>Pickup Point</Text>

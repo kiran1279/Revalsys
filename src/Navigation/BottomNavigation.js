@@ -6,6 +6,7 @@ import HomeSVG from '../../assets/SVG/HomeSVG';
 import HomeScreen from '../Screens/HomeScreen';
 import ProfileSVG from '../../assets/SVG/ProfileSVG';
 import ProfileScreen from '../Screens/ProfileScreen';
+import DashBoard from '../Screens/DashBoard';
 
 
 const BottomNavigation = () => {
@@ -22,7 +23,14 @@ const BottomNavigation = () => {
                         <HomeSVG size={25} color={color} />
                     ),
                 }}
-                name="Home" component={HomeScreen} />
+                name="DashBoard" component={DashBoard} />
+            {/* <Tab.Screen
+                options={{
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <HomeSVG size={25} color={color} />
+                    ),
+                }}
+                name="Home" component={HomeScreen} /> */}
             <Tab.Screen
                 options={{
                     tabBarIcon: ({ color, size, focused }) => (
